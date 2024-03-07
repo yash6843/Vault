@@ -1,7 +1,7 @@
-import maskpass
-import functions as fn
-import json
-from pyfiglet import Figlet
+import maskpass # Hide/mask pass in prompt
+import functions as fn # Basic functions for writing/reading json files
+import json 
+from pyfiglet import Figlet # Text art 
 
 f = Figlet(font='slant')
 print(f.renderText('Vault'))
@@ -9,9 +9,11 @@ print(f.renderText('Vault'))
 passcode = maskpass.askpass("Please enter the 4 digit PIN: ")
 with open("info.json","r") as f:
     pn = (json.load(f))["PIN"]
+    
 if(pn == passcode):
     print("Logged in")
     option = "0"
+
     while option != "5":
          print("[1] Add entry\n[2] Search entry\n[3] List all entries\n[4] Change log-in PIN\n[5] Quit")
          option = input()
