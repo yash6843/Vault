@@ -9,12 +9,12 @@ print(f.renderText('Vault'))
 passcode = maskpass.askpass("Please enter the 4 digit PIN: ")
 with open("info.json","r") as f:
     pn = (json.load(f))["PIN"]
-    
+
 if(pn == passcode):
     print("Logged in")
     option = "0"
 
-    while option != "5":
+    while option != "5": 
          print("[1] Add entry\n[2] Search entry\n[3] List all entries\n[4] Change log-in PIN\n[5] Quit")
          option = input()
          if(option == "1"):
@@ -52,5 +52,6 @@ if(pn == passcode):
          if(option == "4"):
              new_pin = input("Enter new PIN: ")
              fn.change_pin(new_pin,filename="info.json")
+
          if(option == "5"):
              break
