@@ -14,9 +14,10 @@ if(pn == passcode):
     print("Logged in")
     option = "0"
 
-    while option != "5": 
-         print("[1] Add entry\n[2] Search entry\n[3] List all entries\n[4] Change log-in PIN\n[5] Quit")
+    while option != "7": 
+         print("[1] Add entry\n[2] Remove entry\n[3] Search entry\n[4] List all entries\n[5] Change log-in PIN\n[6] Password Generator\n[7] Quit")
          option = input()
+         
          if(option == "1"):
             title=input("Enter title: ")
             username=input("Enter username: ")
@@ -27,8 +28,12 @@ if(pn == passcode):
                 "password": passw
             }
             fn.write_json(dict,filename="info.json")
-
+        
          if(option == "2"):
+             query = input("Enter the query/title you want to delete: ")
+             fn.remove_json(query,filename='info.json')
+
+         if(option == "3"):
             with open("info.json","r") as f:
                  search = False
                  query = input("Enter search query: ")
@@ -41,7 +46,7 @@ if(pn == passcode):
                  if(search != True): 
                   print("No entries found!!")
 
-         if(option == "3"):
+         if(option == "4"):
              print("------------------")
              with open("info.json","r") as f:
                  data = (json.load(f))["info"]
@@ -49,9 +54,14 @@ if(pn == passcode):
                       print("Title:"+data[i]["title"]+"\nUsername:"+data[i]["username"]+"\nPassword:"+data[i]["password"])
                       print("------------------")
 
-         if(option == "4"):
+         if(option == "5"):
              new_pin = input("Enter new PIN: ")
              fn.change_pin(new_pin,filename="info.json")
+        
+         if(option == "6"):
+             length = int(input("Enter the length of password you want to generate: "))
+             password = fn.pass_gen(length)
+             print(password)
 
-         if(option == "5"):
+         if(option == "7"):
              break
