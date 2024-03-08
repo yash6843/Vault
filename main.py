@@ -2,11 +2,7 @@ import maskpass # Hide/mask pass in prompt
 import functions as fn # Basic functions for writing/reading json files
 import json 
 from pyfiglet import Figlet # Text art 
-import cryptocode
-
-encoded = cryptocode.encrypt("mystring","mypassword")
-
-decoded = cryptocode.decrypt(encoded, "mypassword")
+import cryptocode # for encryption and decryption
 
 f = Figlet(font='slant')
 print(f.renderText('Vault'))
