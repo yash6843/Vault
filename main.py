@@ -2,6 +2,11 @@ import maskpass # Hide/mask pass in prompt
 import functions as fn # Basic functions for writing/reading json files
 import json 
 from pyfiglet import Figlet # Text art 
+import cryptocode
+
+encoded = cryptocode.encrypt("mystring","mypassword")
+
+decoded = cryptocode.decrypt(encoded, "mypassword")
 
 f = Figlet(font='slant')
 print(f.renderText('Vault'))
@@ -24,8 +29,8 @@ if(pn == passcode):
             passw=input("Enter password: ")
             dict = {
                 "title": title,
-                "username": username,
-                "password": passw
+                "username": cryptocode.encrypt(username,"mypassword"),
+                "password": cryptocode.encrypt(passw,"mypassword")
             }
             fn.write_json(dict,filename="info.json")
         
@@ -41,7 +46,8 @@ if(pn == passcode):
                  for i in range(len(data)):
                      if(query in data[i]["title"]):
                       search = True
-                      print("Title:"+data[i]["title"]+"\nUsername:"+data[i]["username"]+"\nPassword:"+data[i]["password"])
+                      print("Title:"+data[i]["title"]+"\nUsername:"+cryptocode.decrypt(data[i]["username"], "mypassword")
++"\nPassword:"+cryptocode.decrypt(data[i]["password"], "mypassword"))
                       print("------------------")
                  if(search != True): 
                   print("No entries found!!")
@@ -51,7 +57,7 @@ if(pn == passcode):
              with open("info.json","r") as f:
                  data = (json.load(f))["info"]
                  for i in range(len(data)):
-                      print("Title:"+data[i]["title"]+"\nUsername:"+data[i]["username"]+"\nPassword:"+data[i]["password"])
+                      print("Title:"+data[i]["title"]+"\nUsername:"+cryptocode.decrypt(data[i]["username"], "mypassword")+"\nPassword:"+cryptocode.decrypt(data[i]["password"], "mypassword"))
                       print("------------------")
 
          if(option == "5"):
