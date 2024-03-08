@@ -21,6 +21,8 @@ When you run the program, you first need to enter a 4 digit PIN to log-in
 By default the PIN is **2024**
 Later on you can change it too.
 
+![alt text](https://media.discordapp.net/attachments/838249083571142756/1215775476363300945/image.png?ex=65fdfa25&is=65eb8525&hm=426a381eb28ef0c60fcf2cfba00938779841b48eed226e13befc168b711f598d&=&format=webp&quality=lossless&width=575&height=411)
+
 Password Manager Menu:
  1. Add entry
  2. Remove entry
