@@ -11,6 +11,7 @@ It allows you to store your passwords securely and generate random, strong passw
 - View a list of all saved entries
 - Generate random passwords of a desired length
 - Password encryption
+- Transcript/Make encrypted file with all entries , encryption password can be given by user
 
 ## Getting Started
 
