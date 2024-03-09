@@ -30,7 +30,8 @@ Password Manager Menu:
  4. List all entries
  5. Change log-in PIN
  6. Password Generator
- 7. Quit
+ 7. Generate a trnascript (Makes a encrypted zip file with all the data)
+ 8. Quit
 
 ## Generate password
  To generate a strong, random password. Enter the option respective to the pass-gen i.e 6 and then enter the desired password length. The program will generate a random, strong password of the length and will display it on the screen 
