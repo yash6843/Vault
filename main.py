@@ -12,11 +12,10 @@ with open("info.json","r") as f:
     pn = (json.load(f))["PIN"]
 
 if(pn == passcode):
-    print("Logged in")
     option = "0"
 
     while option != "7": 
-         print("[1] Add entry\n[2] Remove entry\n[3] Search entry\n[4] List all entries\n[5] Change log-in PIN\n[6] Password Generator\n[7] Quit")
+         print("\nPassword manager menu:\n1. Add entry\n2. Remove entry\n3. Search entry\n4. List all entries\n5. Change log-in PIN\n6. Password Generator\n7. Transcript all (Makes a encrypted zip file Vault.7z with all the data)\n8. Quit")
          option = input()
          
          if(option == "1"):
@@ -53,7 +52,7 @@ if(pn == passcode):
              with open("info.json","r") as f:
                  data = (json.load(f))["info"]
                  for i in range(len(data)):
-                      print("Title:"+data[i]["title"]+"\nUsername:"+cryptocode.decrypt(data[i]["username"], "mypassword")+"\nPassword:"+cryptocode.decrypt(data[i]["password"], "mypassword"))
+                      print("Title:"+data[i]["title"]+"\nUsername:"+cryptocode.decrypt(data[i]["username"], "mypassword")+"\nPassword:"+"{ hidden }")
                       print("------------------")
 
          if(option == "5"):
@@ -66,4 +65,11 @@ if(pn == passcode):
              print(password)
 
          if(option == "7"):
+             ask = input("Are you sure you want to get all entries in a file? (y/n): ")
+             if(ask.lower() == 'y' or ask.lower() =='yes'):
+                 passcode =  maskpass.askpass("Enter the password you would like to encrypt the file with: ")
+                 fn.transcript('info.json',passcode)
+         if(option == "8"):
              break
+else:
+    print("WRONG PIN")

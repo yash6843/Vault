@@ -1,6 +1,10 @@
 import json
 import random
 import string
+import webbrowser
+import cryptocode 
+import py7zr
+import os
 
 def write_json(new_data, filename='info.json'):
     with open(filename,'r+') as file:
@@ -42,5 +46,20 @@ def pass_gen(length=10):
     passw = ""
     for i in range(length):
         passw+=random.choice(data)
-    
     return passw
+
+def transcript(filename='info.json', pin='2024'):
+    with open('info.json', "r") as f:
+         fa = json.load(f)
+         data = fa["info"]
+    with open('transcript.txt', "a") as f:
+         f.write("Format: title , username , password\n")
+         for i in range(len(data)):
+              f.write(data[i]["title"]+' , '+cryptocode.decrypt(data[i]["username"],"mypassword")+' , '+cryptocode.decrypt(data[i]["password"],"mypassword")+"\n")
+
+    with py7zr.SevenZipFile('Vault.7z', 'w', password=str(pin)) as archive:
+        if(os.path.exists('./Vault.7z/transcript.txt')):
+             os.remove('./Vault.7z/transcript.txt')
+        archive.write('transcript.txt')
+    os.remove('transcript.txt')
+    webbrowser.open("Vault.7z")
