@@ -7,7 +7,7 @@ import cryptocode # for encryption and decryption
 f = Figlet(font='slant')
 print(f.renderText('Vault'))
 
-passcode = maskpass.askpass("Please enter the 4 digit PIN: ")
+passcode = maskpass.askpass("Please enter the login PIN: ")
 with open("info.json","r") as f:
     pn = (json.load(f))["PIN"]
 
