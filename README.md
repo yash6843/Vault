@@ -1,4 +1,4 @@
-# Vault - A Simple password managing tool
+# Vault - A Simple Password Managing Tool
 
 This is a simple command-line interface based password manager and generator written in python.
 It allows you to store your passwords securely and generate random, strong passwords.
