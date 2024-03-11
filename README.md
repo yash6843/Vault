@@ -22,7 +22,7 @@ To run this program, you will need to have a python interpreter installed on you
 ## Usage
 
 When you run the program, you first need to enter a 4 digit PIN to log-in
-By default the PIN is **2024**
+By default the PIN is **_2024_**
 Later on you can change it too.
 
 ![alt text](https://media.discordapp.net/attachments/1216395074967965737/1216789045917777981/image.png?ex=6601aa1b&is=65ef351b&hm=a2569d933879f1a608856600f1387bc4abf0b8a172b6daa5fe4ad5de8a674fbe&=&format=webp&quality=lossless&width=1060&height=506)
