@@ -17,7 +17,7 @@ if(pn == passcode):
     while option != "7": 
          print("\nPassword manager menu:\n1. Add entry\n2. Remove entry\n3. Search entry\n4. List all entries\n5. Change log-in PIN\n6. Password Generator\n7. Transcript all (Makes a encrypted zip file Vault.7z with all the data)\n8. Quit")
          option = input()
-         
+
          if(option == "1"):
             title=input("Enter title: ")
             username=input("Enter username: ")
@@ -28,7 +28,7 @@ if(pn == passcode):
                 "password": cryptocode.encrypt(passw,"mypassword")
             }
             fn.write_json(dict,filename="info.json")
-        
+
          if(option == "2"):
              query = input("Enter the query/title you want to delete: ")
              fn.remove_json(query,filename='info.json')
