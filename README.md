@@ -35,7 +35,7 @@ Password Manager Menu:
 4.  List all entries
 5.  Change log-in PIN
 6.  Password Generator
-7.  Generate a trnascript (Makes a encrypted zip file with all the data).
+7.  Generate a trnascript (Makes a encrypted zip file with all the data)
 8.  Quit
 
 ## Generate password
