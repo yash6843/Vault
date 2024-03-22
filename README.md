@@ -1,4 +1,4 @@
-# Vault - A Simple Password Managing Tool
+# ![](https://media.discordapp.net/attachments/1219635979040591972/1220801711266988112/icon-5.png?ex=66104331&is=65fdce31&hm=386cc74311ac27ed8389f62fa017904d8068bb8e8edf45b4c59ac4f57f7e7bfe&=&format=webp&quality=lossless&width=30&height=30) Vault - A Simple Password Managing Tool
 
 This is a simple command-line interface based password manager and generator written in python.
 It allows you to store your passwords securely and generate random, strong passwords.
